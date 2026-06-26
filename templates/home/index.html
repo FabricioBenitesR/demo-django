@@ -6,7 +6,7 @@
     <title>Demo Django + Tailwind</title>
     <script src="https://cdn.tailwindcss.com"></script>
 </head>
-<body class="bg-gradient-to-br from-slate-900 via-indigo-900 to-slate-900 min-h-screen text-slate-100">
+<body class="bg-gradient-to-br from-emerald-900 via-teal-900 to-slate-900 min-h-screen text-slate-100">
 
     <header class="container mx-auto px-6 py-12">
         <nav class="flex items-center justify-between">
@@ -55,7 +55,8 @@
             <h2 class="text-2xl font-bold mb-4">Mensagens do banco de dados</h2>
             <p class="text-slate-400 text-sm mb-6">
                 Os itens abaixo são lidos do SQLite. Adicione novos pelo
-                <a href="/admin/" class="text-indigo-300 underline hover:text-indigo-200">painel admin</a>.
+                <a href="/sobre/" class="text-sm text-slate-300 hover:text-white transition">/sobre</a>
+                <a href="/admin/" class="text-sm text-slate-300 hover:text-white transition">/admin</a>
             </p>
 
             {% if mensagens %}
@@ -64,6 +65,7 @@
                         <li class="border-l-2 border-emerald-400 pl-4 py-1">
                             <h3 class="font-semibold">{{ m.titulo }}</h3>
                             <p class="text-sm text-slate-300">{{ m.conteudo }}</p>
+                            <span class="text-xs text-slate-400">por {{ m.autor }}</span>
                             <span class="text-xs text-slate-500">{{ m.criada_em|date:"d/m/Y H:i" }}</span>
                         </li>
                     {% endfor %}
